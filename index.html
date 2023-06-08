@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>DeadDrop.pl</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="assets/css/main.css">
+ <link rel="stylesheet" href="assets/css/loader.css">
+ <script src="https://kit.fontawesome.com/b7678f1517.js" crossorigin="anonymous"></script>
+ <link rel="icon" href="assets/img/logo.png">
+</head>
+
+<body>
+ <div class="loader">
+  <div class="wrapper"></div>
+ </div>
+ <div class="container">
+  <div class="header" id="header">
+   <img src="assets/img/logo_full.png" alt="logo">
+   <ul id="menu">
+    <li>
+     <a class="active" id="li1" onclick='scrollToHome();'>Strona główna</a>
+    </li>
+    <li>
+     <a id="li2" onclick='scrollToModes();'>Tryby</a>
+    </li>
+    <li>
+     <a href="https://vishop.pl/shop/820/">Sklep</a>
+    </li>
+    <li class="openmob">
+     <a onclick="toggleMobMenu();"><i class="fa-solid fa-bars fa-2x"></i></a>
+    </li>
+    <li class="online">
+     <a id="status-global"><i class="fa-solid fa-circle" style="color: #00e00f;"></i> </a>
+    </li>
+   </ul>
+  </div>
+  <ul id="mobmenu" class="hidden">
+   <li>
+    <a class="active" id="li1" onclick='scrollToHome();'>Strona główna</a>
+   </li>
+   <li>
+    <a id="li2" onclick='scrollToModes();'>Tryby</a>
+   </li>
+   <li>
+    <a href="https://vishop.pl/shop/820/">Sklep</a>
+   </li>
+  </ul>
+  <div class="carousel" data-carousel id="carousel">
+   <button class="carousel-button prev" data-carousel-button="prev"><i class="fa-solid fa-chevron-left"></i></button>
+   <button class="carousel-button next" data-carousel-button="next"><i class="fa-solid fa-chevron-right"></i></button>
+   <ul data-slides>
+    <li class="slide" data-active>
+     <img src="https://cdn.discordapp.com/attachments/916686993574989855/1114983873454018622/wpp.png" alt="image">
+     <div class="slide-content">
+      <h1 class="name purple">NOWA GENERACJA</h1>
+      <h3 class="desc">Zupełnie odświeżony serwer z nowymi trybami.</h3>
+      <a class="copyip" id="copyip" onclick="copyTxt('DeadDrop.pl');">SKOPIUJ IP</a>
+     </div>
+    </li>
+    <li class="slide">
+     <img src="https://cdn.discordapp.com/attachments/916686993574989855/1114983874695532635/wpp3.png" alt="image">
+     <div class="slide-content">
+      <h1 class="name aqua">DeadSMP</h1>
+      <h3 class="desc">Survival z różnymi dodatkami</h3>
+      <a class="copyip" id="copyip" onclick="copyTxt('DeadDrop.pl');">SKOPIUJ IP</a>
+     </div>
+    </li>
+   </ul>
+  </div>
+  <div class="modes" id="modes">
+   <div class="sub">
+    <div class="mode">
+     <img class="icon" src="assets/img/logo.png" alt="icon">
+     <h2 class="name">DeadSMP</h2>
+     <p class="online" id="status-deadsmp"></p>
+     <a href="https://vishop.pl/shop/820/server/5208" class="go">Przejdź</a>
+    </div>
+   </div>
+  </div>
+  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/scroll.js"></script>
+  <script src="assets/js/status.js"></script>
+  <script src="assets/js/copytxt.js"></script>
+  <script src="assets/js/toggleMenu.js"></script>
+  <script src="assets/js/load.js"></script>
+</body>
+
+</html>
