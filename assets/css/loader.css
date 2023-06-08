@@ -1,0 +1,36 @@
+.loader {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(61, 61, 61);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.loader>.wrapper {
+    width: 55px;
+    height: 55px;
+    border: 5px solid white;
+    border-top: 5px solid transparent;
+    border-radius: 500px;
+    animation: spin 2s infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

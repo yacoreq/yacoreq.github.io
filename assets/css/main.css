@@ -1,0 +1,350 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Lato', Arial;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(61, 61, 61, 1);
+    background-image: linear-gradient(360deg, rgba(61, 61, 61, 1) 0%, rgba(18, 18, 18, 1) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    z-index: 90;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    transition: 0.5s;
+}
+
+.header.scroll {
+    background-color: #00000067;
+}
+
+.header>ul#menu {
+    list-style: none;
+}
+
+.header>ul#menu>li {
+    display: inline-block;
+}
+
+.header>ul#menu>li.online {
+    position: fixed;
+    right: 3rem;
+}
+
+.header>ul#menu>li.openmob {
+    position: fixed;
+    top: 30px;
+    right: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    color: white;
+}
+
+.header>ul#menu>li>a {
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: 900;
+    transition: ease-in-out 0.5s;
+}
+
+.header>ul#menu>li>a:first-child {
+    margin-left: none;
+}
+
+.header>ul#menu>li>a:hover {
+    cursor: pointer;
+    border-bottom: 5px solid #55ffff;
+}
+
+.header>ul#menu>li.online>a:hover,
+.header>ul#menu>li.openmob>a:hover {
+    cursor: text;
+    border-bottom: none;
+}
+
+.header>ul#menu>li.online>a>i {
+    font-size: 20px;
+    text-shadow: 0px 0px 51px rgba(0, 224, 15, 1);
+}
+
+.header>ul#menu>li>a.active {
+    border-bottom: 5px solid #55ffff;
+}
+
+ul#mobmenu {
+    position: fixed;
+    top: 100px;
+    right: 1rem;
+    display: block;
+    margin: auto;
+    z-index: 91;
+    transition: 0.5s;
+}
+
+ul#mobmenu>li {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+ul#mobmenu>li>a {
+    display: block;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 900;
+    text-decoration: none;
+    height: 50px;
+    background-color: #00000034;
+    padding: 5px 10px;
+}
+
+ul#mobmenu>li>a.active {
+    background-color: #55ffff34;
+}
+
+ul#mobmenu.hidden {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0px;
+}
+
+.header>img {
+    height: 100px;
+}
+
+.carousel {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transition: 0.5s;
+}
+
+.carousel.scroll {
+    transform: scale(0.9);
+}
+
+.carousel>ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+.slide>img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.name.purple {
+    background: -webkit-linear-gradient(90deg, rgba(89, 0, 255, 1) 0%, rgba(81, 11, 160, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name.aqua {
+    background: -webkit-linear-gradient(90deg, #55ffff 0%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.desc {
+    font-size: 1.5rem;
+}
+
+.copyip {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(85, 255, 255, 1);
+    background-image: linear-gradient(90deg, rgba(85, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    color: #8b8b8b;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.copyip:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    transition: 0.5s;
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}
+
+.modes {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    object-position: center;
+    background-color: rgb(61, 61, 61);
+}
+
+.modes>.sub {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+    top: 300px;
+    max-width: 100vw;
+}
+
+.modes>.sub>.mode {
+    width: 300px;
+    height: 200px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 25px;
+    margin-left: 30px;
+}
+
+.modes>.sub>.mode:first-child {
+    margin-left: 0;
+}
+
+.modes>.sub>.mode>.icon {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 0 auto;
+}
+
+.modes>.sub>.mode>.name {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.modes>.sub>.mode>.online {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.modes>.sub>.mode>.go {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(85, 255, 255, 1);
+    background-image: linear-gradient(90deg, rgba(85, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    color: #8b8b8b;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 25px;
+    border-radius: 5px;
+    transition: 0.5s;
+    position: relative;
+    top: 5px;
+}
+
+.modes>.sub>.mode>.go:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 700px) {
+    .modes>.sub {
+        align-items: center;
+        flex-direction: column;
+    }
+    .modes>.sub>.mode {
+        margin-top: 30px;
+        margin-left: 0;
+    }
+    .modes>.sub>.mode:first-child {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .header>ul#menu>li {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .header>ul#menu>li.openmob {
+        opacity: 1;
+        visibility: visible;
+    }
+}
